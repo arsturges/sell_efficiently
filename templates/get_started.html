@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block main %}
+<h2>Get Started</h2>
+{% if error %}
+    <div class='alert alert-error'>
+        <strong>Error:</strong> {{error}}
+    </div>
+{% endif %}
+<form action="" method=post enctype=multipart/form-data>
+    <legend>Choose a product class</legend>
+    <input type=submit value="Continue to next step" class="btn btn-primary">
+</form>
+{% endblock %}

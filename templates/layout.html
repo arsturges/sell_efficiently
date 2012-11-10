@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sell Efficiently -- {{title}}</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='override.css') }}" />
+</head>
+<body class="container">
+    <div id="content">
+        {% block header %}
+            {% include "header.html" %}
+        {% endblock header %}
+        {% block main %}
+            <p>You are in the main block. This content from 'layout.html'. If you can read this paragraph, it has not been overwritten by a child template.</p>
+        {% endblock main %}
+    </div><!-- content -->
+    <footer>
+        {% block footer %}
+            {% include "footer.html" %}
+        {% endblock footer %}
+    </footer>
+</body>
+</html>

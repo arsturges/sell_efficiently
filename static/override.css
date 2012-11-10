@@ -1,0 +1,6 @@
+.iconsbig {  /* http://stackoverflow.com/questions/5111832/how-can-i-resize-enlarge-an-image-like-sprite-icons-via-css-3 */
+	/*-moz-background-size: 20px;*/
+  background-size: 150%;
+  /*image-rendering:-moz-crisp-edges;
+  -ms-interpolation-mode:nearest-neighbor;*/
+}
