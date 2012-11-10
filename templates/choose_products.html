@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block main %}
+<h2>Choose products to compare</h2>
+<p>Choose products below.</p>
+<div class="hero-unit">
+      <h2>What kind of product would you like to compare?</h2>
+      <p>Use the selectors to create the product profile you would like.</p>
+      <form>
+        <select>
+          <option>Refrigerators</option>
+          <option>Clothes Washers</option>
+          <option>Clothes Dryers</option>
+          <option>Televisions</option>
+          <option>Windows</option>
+          <option>Set-Top Boxes</option>
+        </select>
+      </form>
+</div>
+<div class="row">
+    <div class="span4">
+        <h2>Product One</h2>
+        <p>John, what is step 1?</p>
+        <form>
+          Brand: <select>
+            <option>GE</option>
+            <option>Frigidaire</option>
+            <option>Samsung</option>
+            <option>LG</option>
+            <option>Whirlpool</option>
+            <option>Igloo</option>
+            <option>KitchenAid</option>
+            <option>Bosch</option>
+          </select>
+          </br>
+          Type: <select>
+            <option>Top-Mount</option>
+            <option>Bottom-Mount</option>
+            <option>Side by Side Doors</option>
+            <option>French Doors</option>
+          </select>
+          </br>
+          Model: <select>
+            <option>CRD--5939834</option>
+            <option>CRD--417749</option>
+            <option>CTX--2348AA</option>
+            <option>CTC--3904UI4</option>
+          </select>
+        </form>
+        <p>Price: $450</p>
+        <p>Average Annual Energy Usage: 345 kilowatt-hours</p>
+    </div>
+    <div class="span2">
+      <p>picture of product</p>
+    </div>
+    <div class="span4">
+        <h2>Product Two</h2>
+        <p>Step filler.</p>
+        <form> <!-- already this is bad code repetition. fix it eventually. -->
+          Brand: <select>
+            <option>GE</option>
+            <option>Frigidaire</option>
+            <option>Samsung</option>
+            <option>LG</option>
+            <option>Whirlpool</option>
+            <option>Igloo</option>
+            <option>KitchenAid</option>
+            <option>Bosch</option>
+          </select>
+          </br>
+          Type: <select>
+            <option>Top-Mount</option>
+            <option>Bottom-Mount</option>
+            <option>Side by Side Doors</option>
+            <option>French Doors</option>
+          </select>
+          </br>
+          Model: <select>
+            <option>CRD--5939834</option>
+            <option>CRD--417749</option>
+            <option>CTX--2348AA</option>
+            <option>CTC--3904UI4</option>
+          </select>
+        </form>
+        <p><strong>Price:</strong> $520</p>
+        <p><strong>Average Annual Energy Usage:</strong> 354 kilowatt-hours</p>
+    </div>
+    <div class="span2">
+      <p>picture of product</p>
+    </div>
+</div>
+{% endblock %}

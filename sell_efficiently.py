@@ -1,8 +1,13 @@
 import os
 from flask import Flask, redirect, render_template, url_for, request
+from contextlib import closing
 
 app = Flask(__name__)
 app.debug = True       # Set to false before deploying!
+DATABASE = 'products.db'
+
+def connect_db():
+    return sqlite3.connect(app.config['DATABASE'])
 
 @app.route('/')
 def index():
@@ -10,16 +15,11 @@ def index():
 
 @app.route('/get_started', methods = ['GET','POST'])
 def get_started():
-    error = None
-    if request.method == 'POST':
-            return render_template(
-                'get_started.html',
-                title='Get Started',
-                error = "The back end returned a parsing error. \
-                        This probably means that one or more of the files \
-                        you submitted isn't formatted correctly.")
-    else:
-        return render_template('get_started.html', title="Get Started", error=error)
+    return render_template('get_started.html', title="Get Started")
+
+@app.route('/choose_products')
+def choose_products():
+    return render_template('choose_products.html', title = "Choose Products") 
 
 @app.route('/help')
 def help():
