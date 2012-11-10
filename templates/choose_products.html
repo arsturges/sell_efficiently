@@ -22,21 +22,15 @@
         <p>John, what is step 1?</p>
         <form>
           Brand: <select>
-            <option>GE</option>
-            <option>Frigidaire</option>
-            <option>Samsung</option>
-            <option>LG</option>
-            <option>Whirlpool</option>
-            <option>Igloo</option>
-            <option>KitchenAid</option>
-            <option>Bosch</option>
+            {% for brand in brands %}
+                <option>{{brand[0]}}</option>
+            {% endfor %}
           </select>
           </br>
           Type: <select>
-            <option>Top-Mount</option>
-            <option>Bottom-Mount</option>
-            <option>Side by Side Doors</option>
-            <option>French Doors</option>
+          {% for type in types %}
+            <option>{{type[0]}}</option>
+          {% endfor %}
           </select>
           </br>
           Model: <select>
@@ -88,4 +82,5 @@
       <p>picture of product</p>
     </div>
 </div>
+{{types}}
 {% endblock %}
