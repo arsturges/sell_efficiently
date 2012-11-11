@@ -40,7 +40,9 @@ def choose_products():
           brands=list_of_brands,
           types = list_of_types,
           sizes = list_of_sizes,
-          results_visibility = results_visibility) 
+          results_visibility = results_visibility,
+          results1=None,
+          results2=None) 
     else:
         results_visibility = 'block'
         pic_urls = {}
