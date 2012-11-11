@@ -1,11 +1,7 @@
 {% extends "layout.html" %}
 {% block main %}
 <h2>Choose products to compare</h2>
-<div class="hero-unit">
-      <h2>Choose two products to compare.</h2>
-      <p>Use the selectors to create the product profile you would like.</p>
-      <form style="align: center" action="" method=post enctype=multipart/form-data>
-</div>
+<form style="align: center" action="view_results" method=post enctype=multipart/form-data>
 <div class="row">
     <div class="span6">
         <h2>Product One</h2>
@@ -18,18 +14,21 @@
           </select>
           </br>
           Type: <select>
+            <option></option>
           {% for type in types %}
             <option>{{type[0]}}</option>
           {% endfor %}
           </select>
           </br>
           Size: <select name="size1">
+            <option></option>
           {% for size in sizes %}
             <option value="{{size[0]}}">{{size[0]}}</option>
           {% endfor %}
           </select>
           </br>
           Model: <select>
+            <option></option>
             <option>CRD--5939834</option>
             <option>CRD--417749</option>
             <option>CTX--2348AA</option>
@@ -41,6 +40,7 @@
         <h2>Product Two</h2>
         <!-- <form>--> <!-- already this is bad code repetition. fix it eventually. -->
           Brand: <select>
+            <option></option>
             <option>GE</option>
             <option>Frigidaire</option>
             <option>Samsung</option>
@@ -52,6 +52,7 @@
           </select>
           </br>
           Type: <select>
+            <option></option>
             <option>Top-Mount</option>
             <option>Bottom-Mount</option>
             <option>Side by Side Doors</option>
@@ -59,12 +60,14 @@
           </select>
           </br>
           Size: <select name="size2">
+            <option></option>
           {% for size in sizes %}
             <option value="{{size[0]}}">{{size[0]}}</option>
           {% endfor %}
           </select>
           </br>
           Model: <select>
+            <option></option>
             <option>CRD--5939834</option>
             <option>CRD--417749</option>
             <option>CTX--2348AA</option>
@@ -74,7 +77,8 @@
     </div>
 </div>
 <!--<form style="align: center" action="" method=post enctype=multipart/form-data>-->
-  <input type=submit value="Get Results" class="btn btn-primary btn-large">
+  <br>
+  <div align=center><input type=submit value="Compare Products" class="btn btn-primary btn-large"></div>
 </form>
 <div class="row">
 </div> <!-- row -->
