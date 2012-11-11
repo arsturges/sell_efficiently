@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block main %}
 <h2>Choose products to compare</h2>
-<p>Choose products below.</p>
 <div class="hero-unit">
       <h2>What kind of product would you like to compare?</h2>
       <p>Use the selectors to create the product profile you would like.</p>
@@ -17,7 +16,7 @@
       <!--</form> -->
 </div>
 <div class="row">
-    <div class="span4">
+    <div class="span6">
         <h2>Product One</h2>
         <p>John, what is step 1?</p>
         <!--<form>-->
@@ -46,13 +45,8 @@
             <option>CTC--3904UI4</option>
           </select>
         <!--</form>-->
-        <p><strong>Price:</strong> $450</p>
-        <p><strong>Average Annual Energy Usage:</strong> 345 kilowatt-hours</p>
     </div>
-    <div class="span2">
-        <img src="{{pic_url_1}}", class="img-rounded">
-    </div>
-    <div class="span4">
+    <div class="span6">
         <h2>Product Two</h2>
         <p>Step filler.</p>
         <!-- <form>--> <!-- already this is bad code repetition. fix it eventually. -->
@@ -87,27 +81,35 @@
             <option>CTC--3904UI4</option>
           </select>
         <!--</form>-->
-        <p><strong>Price:</strong> $520</p>
-        <p><strong>Average Annual Energy Usage:</strong> 354 kilowatt-hours</p>
-    </div>
-    <div class="span2">
-      <img src="{{pic_url_2}}", class="img-rounded">
     </div>
 </div>
 <!--<form style="align: center" action="" method=post enctype=multipart/form-data>-->
   <input type=submit value="Get Results" class="btn btn-primary btn-large">
 </form>
 <div class="row">
-  <div>
-    <p>Results below!</p>
-  </div>
 </div> <!-- row -->
 <div class="row" style="display:{{results_visibility}}">
   <div class="span6">
     <h2>Product One</h2>
+    <img src="{{pic_url_1}}", class="img-rounded">
+    <p><strong>Price:</strong> $450</p>
+    <p><strong>Average Annual Energy Usage:</strong> 345 kilowatt-hours</p>
+    <ul>
+    {% for result in results1[0] %}
+      <li>{{result}}</li>
+    {% endfor %}
+    </ul>
   </div>
   <div class="span6">
     <h2>Produce Two</h2>
+    <img src="{{pic_url_2}}", class="img-rounded">
+    <p><strong>Price:</strong> $520</p>
+    <p><strong>Average Annual Energy Usage:</strong> 354 kilowatt-hours</p>
+    <ul>
+    {% for result in results2[0] %}
+      <li>{{result}}</li>
+    {% endfor %}
+    </ul>
   </div>
 </div><!--row-->
 {% endblock %}

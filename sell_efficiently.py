@@ -49,11 +49,26 @@ def choose_products():
         pic_urls['Large'] = 'http://images.lowes.com/product/converted/012505/012505698699.jpg'
         pic_url_1 = pic_urls[request.form['size1']]
         pic_url_2 = pic_urls[request.form['size2']]
+        product1_sql = "select * from products where modelNumber = 'FFTR1814LB'"
+        product2_sql = "select * from products where modelNumber = 'RF261BEAESP'"
+
+        db = connect_db()
+        fridge1 = db.execute(product1_sql)
+        fridge2 = db.execute(product2_sql)
+        fridge1_attributes = []
+        for row in fridge1.fetchall():
+            fridge1_attributes.append(row)
+        fridge2_attributes = []
+        for row in fridge2.fetchall():
+            fridge2_attributes.append(row)
+            
         return render_template('choose_products.html', 
           title="Product Comparison Results", 
           pic_url_1=pic_url_1,
           pic_url_2=pic_url_2,
-          results_visibility=results_visibility)
+          results_visibility=results_visibility,
+          results1=fridge1_attributes,
+          results2=fridge2_attributes)
 
 @app.route('/help')
 def help():
