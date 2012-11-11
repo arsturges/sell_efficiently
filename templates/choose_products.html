@@ -5,7 +5,7 @@
 <div class="hero-unit">
       <h2>What kind of product would you like to compare?</h2>
       <p>Use the selectors to create the product profile you would like.</p>
-      <form>
+      <form style="align: center" action="" method=post enctype=multipart/form-data>
         <select>
           <option>Refrigerators</option>
           <option>Clothes Washers</option>
@@ -14,13 +14,13 @@
           <option>Windows</option>
           <option>Set-Top Boxes</option>
         </select>
-      </form>
+      <!--</form> -->
 </div>
 <div class="row">
     <div class="span4">
         <h2>Product One</h2>
         <p>John, what is step 1?</p>
-        <form>
+        <!--<form>-->
           Brand: <select>
             {% for brand in brands %}
                 <option>{{brand[0]}}</option>
@@ -33,23 +33,29 @@
           {% endfor %}
           </select>
           </br>
+          Size: <select name="size1">
+          {% for size in sizes %}
+            <option value="{{size[0]}}">{{size[0]}}</option>
+          {% endfor %}
+          </select>
+          </br>
           Model: <select>
             <option>CRD--5939834</option>
             <option>CRD--417749</option>
             <option>CTX--2348AA</option>
             <option>CTC--3904UI4</option>
           </select>
-        </form>
-        <p>Price: $450</p>
-        <p>Average Annual Energy Usage: 345 kilowatt-hours</p>
+        <!--</form>-->
+        <p><strong>Price:</strong> $450</p>
+        <p><strong>Average Annual Energy Usage:</strong> 345 kilowatt-hours</p>
     </div>
     <div class="span2">
-      <p>picture of product</p>
+        <img src="{{pic_url_1}}", class="img-rounded">
     </div>
     <div class="span4">
         <h2>Product Two</h2>
         <p>Step filler.</p>
-        <form> <!-- already this is bad code repetition. fix it eventually. -->
+        <!-- <form>--> <!-- already this is bad code repetition. fix it eventually. -->
           Brand: <select>
             <option>GE</option>
             <option>Frigidaire</option>
@@ -68,19 +74,40 @@
             <option>French Doors</option>
           </select>
           </br>
+          Size: <select name="size2">
+          {% for size in sizes %}
+            <option value="{{size[0]}}">{{size[0]}}</option>
+          {% endfor %}
+          </select>
+          </br>
           Model: <select>
             <option>CRD--5939834</option>
             <option>CRD--417749</option>
             <option>CTX--2348AA</option>
             <option>CTC--3904UI4</option>
           </select>
-        </form>
+        <!--</form>-->
         <p><strong>Price:</strong> $520</p>
         <p><strong>Average Annual Energy Usage:</strong> 354 kilowatt-hours</p>
     </div>
     <div class="span2">
-      <p>picture of product</p>
+      <img src="{{pic_url_2}}", class="img-rounded">
     </div>
 </div>
-{{types}}
+<!--<form style="align: center" action="" method=post enctype=multipart/form-data>-->
+  <input type=submit value="Get Results" class="btn btn-primary btn-large">
+</form>
+<div class="row">
+  <div>
+    <p>Results below!</p>
+  </div>
+</div> <!-- row -->
+<div class="row" style="display:{{results_visibility}}">
+  <div class="span6">
+    <h2>Product One</h2>
+  </div>
+  <div class="span6">
+    <h2>Produce Two</h2>
+  </div>
+</div><!--row-->
 {% endblock %}
