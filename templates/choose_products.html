@@ -81,24 +81,22 @@
   <div class="span6">
     <h2>Product One</h2>
     <img src="{{pic_url_1}}", class="img-rounded">
-    <p><strong>Price:</strong> $450</p>
-    <p><strong>Average Annual Energy Usage:</strong> 345 kilowatt-hours</p>
-    <ul>
-    {% for result in results1[0] %}
-      <li>{{result}}</li>
-    {% endfor %}
-    </ul>
+    {% if results1 != None %}
+      <p><strong>Price:</strong> ${{results1[0][7] }}</p>
+      <p><strong>Energy Usage:</strong> {{results1[0][6]}} kilowatt-hours per year</p>
+      <p><strong>Description:</strong> {{results1[0][12]}}</p>
+      <p><strong>Pitch:</strong> {{results1[0][8]}}</p>
+    {% endif %}
   </div>
   <div class="span6">
-    <h2>Produce Two</h2>
+    <h2>Product Two</h2>
     <img src="{{pic_url_2}}", class="img-rounded">
-    <p><strong>Price:</strong> $520</p>
-    <p><strong>Average Annual Energy Usage:</strong> 354 kilowatt-hours</p>
-    <ul>
-    {% for result in results2[0] %}
-      <li>{{result}}</li>
-    {% endfor %}
-    </ul>
+    {% if results2 != None %}
+      <p><strong>Price:</strong> ${{results2[0][7] }}</p>
+      <p><strong>Energy Usage:</strong> {{results2[0][6]}} kilowatt-hours per year</p>
+      <p><strong>Description:</strong> {{results2[0][12]}}</p>
+      <p><strong>Pitch:</strong> {{results2[0][8]}}</p>
+    {% endif %}
   </div>
 </div><!--row-->
 {% endblock %}
