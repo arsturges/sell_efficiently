@@ -4,7 +4,7 @@ from contextlib import closing
 from sqlite3 import dbapi2 as sqlite3
 
 app = Flask(__name__)
-app.debug = True       # Set to false before deploying!
+app.debug = False # Set to false before deploying!
 DATABASE = 'products.sqlite3'
 app.config.from_object(__name__)
 
@@ -51,8 +51,8 @@ def choose_products():
         pic_urls['Large'] = 'http://images.lowes.com/product/converted/012505/012505698699.jpg'
         pic_url_1 = pic_urls[request.form['size1']]
         pic_url_2 = pic_urls[request.form['size2']]
-        product1_sql = "select * from products where modelNumber = 'FFTR1814LB'"
-        product2_sql = "select * from products where modelNumber = 'RF261BEAESP'"
+        product1_sql = "select * from products where modelNumber = 'KDDC24CVS'"
+        product2_sql = "select * from products where modelNumber = 'RF263AEWP'"
 
         db = connect_db()
         fridge1 = db.execute(product1_sql)

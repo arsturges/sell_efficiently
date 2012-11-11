@@ -16,23 +16,23 @@
           [''	 ,  1173,      1207],
           ['2014',  1260,      1260],
           [''	 ,  1346,      1314],
-		  ['2016',  1432,      1367],
-		  [''	 ,  1519,      1420],
-		  ['2018',  1606,      1474],
-		  [''	 ,  1692,      1527],
-		  ['2020',  1779,      1581],
-		  [''	 ,  1866,      1634],
-		  ['2022',  1952,      1687],
-		  [''	 ,  2039,      1741],
-		  ['2024',  2125,      1794],
-		  [''	 ,  2212,      1848],
-		  ['2026',  2299,      1901]
+          ['2016',  1432,      1367],
+          [''	 ,  1519,      1420],
+          ['2018',  1606,      1474],
+          [''	 ,  1692,      1527],
+          ['2020',  1779,      1581],
+          [''	 ,  1866,      1634],
+          ['2022',  1952,      1687],
+          [''	 ,  2039,      1741],
+          ['2024',  2125,      1794],
+          [''	 ,  2212,      1848],
+          ['2026',  2299,      1901]
         ]);
 
         var options = {
           title: 'Comparison: Total Cost of Ownership',
-          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-		  legend.position: 'bottom'
+          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}},
+		      legend: {position: 'bottom'}
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -40,11 +40,14 @@
       }
     </script>
     <!-- End of Google chart code. -->
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
 </head>
 <body class="container">
     <div id="content">
         {% block header %}
+          {% if request.path != '/' %}
             {% include "header.html" %}
+          {% endif %}
         {% endblock header %}
         {% block main %}
             <p>You are in the main block. This content from 'layout.html'. If you can read this paragraph, it has not been overwritten by a child template.</p>

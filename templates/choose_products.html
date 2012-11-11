@@ -11,6 +11,7 @@
         <h2>Product One</h2>
         <!--<form>-->
           Brand: <select>
+            <option></option>
             {% for brand in brands %}
                 <option>{{brand[0]}}</option>
             {% endfor %}
@@ -79,8 +80,8 @@
 </div> <!-- row -->
 <div class="row" style="display:{{results_visibility}}">
   <div class="span6">
-    <h2>Product One</h2>
     <img src="{{pic_url_1}}", class="img-rounded">
+    <h2>Product One</h2>
     {% if results1 != None %}
       <p><strong>Price:</strong> ${{results1[0][7] }}</p>
       <p><strong>Energy Usage:</strong> {{results1[0][6]}} kilowatt-hours per year</p>
@@ -89,8 +90,8 @@
     {% endif %}
   </div>
   <div class="span6">
-    <h2>Product Two</h2>
     <img src="{{pic_url_2}}", class="img-rounded">
+    <h2>Product Two</h2>
     {% if results2 != None %}
       <p><strong>Price:</strong> ${{results2[0][7] }}</p>
       <p><strong>Energy Usage:</strong> {{results2[0][6]}} kilowatt-hours per year</p>
@@ -99,5 +100,13 @@
     {% endif %}
   </div>
 </div><!--row-->
-<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<div style="display:{{results_visibility}}">
+  <div class="hero-unit">
+    <h2>Your Results:</h2>
+    <p>Based on your utility rate, Product Two has a lower total cost of ownership over the lifetime of the product.</p>
+    <p><strong>Net lifetime savings:</strong> $397</p>
+    <p><strong>Payback period:</strong> 3 years</p>
+  </div>
+  <div id="chart_div" style="width: 900px; height: 500px;"></div>
+</div>
 {% endblock %}
