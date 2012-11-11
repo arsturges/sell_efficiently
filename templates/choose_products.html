@@ -2,23 +2,13 @@
 {% block main %}
 <h2>Choose products to compare</h2>
 <div class="hero-unit">
-      <h2>What kind of product would you like to compare?</h2>
+      <h2>Choose two products to compare.</h2>
       <p>Use the selectors to create the product profile you would like.</p>
       <form style="align: center" action="" method=post enctype=multipart/form-data>
-        <select>
-          <option>Refrigerators</option>
-          <option>Clothes Washers</option>
-          <option>Clothes Dryers</option>
-          <option>Televisions</option>
-          <option>Windows</option>
-          <option>Set-Top Boxes</option>
-        </select>
-      <!--</form> -->
 </div>
 <div class="row">
     <div class="span6">
         <h2>Product One</h2>
-        <p>John, what is step 1?</p>
         <!--<form>-->
           Brand: <select>
             {% for brand in brands %}
@@ -48,7 +38,6 @@
     </div>
     <div class="span6">
         <h2>Product Two</h2>
-        <p>Step filler.</p>
         <!-- <form>--> <!-- already this is bad code repetition. fix it eventually. -->
           Brand: <select>
             <option>GE</option>
