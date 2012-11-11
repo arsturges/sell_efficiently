@@ -11,27 +11,28 @@
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Product A', 'Product B'],
+          ['Year', 'Product One', 'Product Two'],
           ['2012',  1087,      1153],
-          ['2013',  1173,      1207],
+          [''	 ,  1173,      1207],
           ['2014',  1260,      1260],
-          ['2015',  1346,      1314],
+          [''	 ,  1346,      1314],
 		  ['2016',  1432,      1367],
-		  ['2017',  1519,      1420],
+		  [''	 ,  1519,      1420],
 		  ['2018',  1606,      1474],
-		  ['2019',  1692,      1527],
+		  [''	 ,  1692,      1527],
 		  ['2020',  1779,      1581],
-		  ['2021',  1866,      1634],
+		  [''	 ,  1866,      1634],
 		  ['2022',  1952,      1687],
-		  ['2023',  2039,      1741],
+		  [''	 ,  2039,      1741],
 		  ['2024',  2125,      1794],
-		  ['2025',  2212,      1848],
+		  [''	 ,  2212,      1848],
 		  ['2026',  2299,      1901]
         ]);
 
         var options = {
           title: 'Comparison: Total Cost of Ownership',
           hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+		  legend.position: 'bottom'
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
